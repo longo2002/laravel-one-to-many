@@ -19,7 +19,7 @@ class PostSeeder extends Seeder
         for ($i = 0; $i < 50; $i++) {
 
             $post = new Post();
-            $post->nome = $faker->unique()->sentence($faker->numberBetween(3, 5));
+            $post->title = $faker->unique()->sentence($faker->numberBetween(3, 5));
             $post->content = $faker->optional()->text(500);
             $post->slug = Str::slug($post->title, '-');
             $post->save();
