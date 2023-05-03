@@ -34,6 +34,11 @@
                 <td>{{ $post->created_at }}</td>
                 <td>{{ $post->updated_at }}</td>
                 <td>
+                @if ($post->type)
+                <p>Tipologia: {{ $post->type->name }}</p>
+                @endif
+                </td>
+                <td>
                   <div class="d-flex ">
                     <a class="btn btn-sm btn-secondary" href="{{ route('posts.edit',$post) }}">Edit</a>
                   </div>
